@@ -59,7 +59,9 @@ public class verifySystem extends ListenerAdapter {
                 event.getChannel().sendMessageEmbeds(eb.build()).queue();
                 event.getChannel().sendMessageEmbeds(eb1.build()).setActionRow(button).queue();
 
-                guild.createTextChannel("ticket-" + randomInt, guild.getCategoryById("999287949835382795")).complete();
+                final TextChannel channel = guild.createTextChannel("ticket-" + randomInt, guild.getCategoryById("999287949835382795")).complete();
+
+                System.out.println("Created channel id" + channel.getIdLong());
 
 
             }
